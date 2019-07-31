@@ -2,7 +2,18 @@ from test_framework import generic_test
 
 
 def is_palindrome_number(x):
-    # TODO - you fill in here.
+    if x < 0:
+        return False
+    x_to_str = str(x)
+    i = 0
+    j = len(x_to_str) - 1
+    while i <= j:
+        if i == j:
+            return True
+        if x_to_str[i] != x_to_str[j]:
+            return False
+        i += 1
+        j -= 1
     return True
 
 
