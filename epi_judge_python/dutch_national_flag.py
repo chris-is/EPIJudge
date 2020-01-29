@@ -9,8 +9,28 @@ RED, WHITE, BLUE = range(3)
 
 def dutch_flag_partition(pivot_index, A):
     # TODO - you fill in here.
-    return
+    '''
+    The idea here is to put all elements < than the pivot at the left side of the array,
+    and put all the elements > than the pivot at the right side of the array. This can be achieved
+    in a single pass for each case...For elements smaller than the pivot, create a counter smaller, set it to 0
+    and each time an element < pivot is encountered, place it at Array[smaller] then increment the smaller counter.
+    By incrementing the smaller counter you're preparing to insert at the next slot in the array.
+    For elements larger than the pivot, create a counter larger, set it to len(Array) - 1, and each time an element > pivot
+    is encountered, place it at Array[larger] then decrement the larger counter.
+    '''
 
+    pivot = A[pivot_index]
+    smaller = 0
+    for i in range(len(A)):
+        if A[i] < pivot:
+            A[i], A[smaller] = A[smaller], A[i]
+            smaller += 1
+
+    larger = len(A) - 1
+    for j in reversed(range(len(A))):
+        if A[j] > pivot:
+            A[j], A[larger] = A[larger], A[j]
+            larger -= 1
 
 @enable_executor_hook
 def dutch_flag_partition_wrapper(executor, A, pivot_idx):

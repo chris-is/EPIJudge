@@ -3,7 +3,6 @@ from test_framework import generic_test
 
 def parity(x):
     # TODO - you fill in here.
-    result = 0
     '''
     The basic idea behind this is that it's almost like balancing parentheses...if you have bit 1, followed by another
     bit 1, then they'll "cancel" each other out, and we'll add up back with bit 0. But if there's third bit 1 after,
@@ -12,6 +11,7 @@ def parity(x):
     Time complexity is O(n) where n is the word size since we're iteratively testing the value of each bit while tracking
     the number of 1s seen so far.
     '''
+    result = 0
     while x:
         result ^= x & 1
         x >>= 1
