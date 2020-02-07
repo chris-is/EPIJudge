@@ -15,7 +15,7 @@ def merge_two_sorted_lists(L1, L2):
     pointer by one. So, to emphasize this point, you only advance a list's pointer when you've chosen its element.
     You keep doing this until you've visited each node from both lists, or you've exhausted all the nodes from one
     list, and then you just append the nodes from the other list. Of course, since the lists are sorted and
-    we're the next smallest available node at every iteration, the nodes from the remaining list will contain
+    we're appending the next smallest available node at every iteration, the nodes from the remaining list will contain
     the largest values in your result list.
     Finally, return dummy_head.next because the first node has value 0 for its data.
     '''
